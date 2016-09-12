@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+         <div class="form-group has-{{formStatus}}">
+             <input ng-model="lunchItems" id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+         	<div class="alert alert-warning">Textbox does NOT consider an empty item, i.e. ", , ,"</div>
+         </div>
+         <div class="form-group">
+             <button ng-click="checkAmount();" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message text-{{status}}">
+         	{{message}}
+         </div>
+   </div>
+</body>
+</html>
